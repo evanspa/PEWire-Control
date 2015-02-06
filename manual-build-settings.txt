@@ -1,0 +1,1 @@
+Need to manually REMOVE '-l"xml2"' entry from Pods.debug.xcconfig and Pods.release.xcconfig
