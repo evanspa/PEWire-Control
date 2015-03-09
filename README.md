@@ -6,7 +6,7 @@ An iOS static library for the easy stubbing of HTTP responses using simple XML c
 
 ### Typical Usage Example
 
-The typical use case for using PEWire-Control will be in the context of unit testing.  Imagine you have a unit test that exercises code that invokes some web service.  
+The typical use case for using PEWire-Control will be in the context of unit testing.  Imagine you have a unit test that exercises code that invokes some web service.
 
 ##### 1) Create the XML file representing a possible response from the web service
 
@@ -57,7 +57,7 @@ NSBundle *testBundle = [NSBundle bundleForClass:[self class]];
 NSString *path = [testBundle pathForResource:@"fetch-user-success"
                                       ofType:@"xml"
                                  inDirectory:@"http-mock-responses"];
-// Fake out Cocoa's URL loading system such that it will return an HTTP response as 
+// Fake out Cocoa's URL loading system such that it will return an HTTP response as
 // defined in our XML file for any GET requests to: http://example.com/fp/users.  And,
 // simulate a request latency of 5 seconds.
 NSError *err;
@@ -72,5 +72,5 @@ NSStringEncoding encoding;
 ### Installation with CocoaPods
 
 ```ruby
-pod "PEWire-Control"
+pod 'PEWire-Control', '~> 1.0.1'
 ```
