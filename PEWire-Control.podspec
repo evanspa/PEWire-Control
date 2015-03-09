@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "PEWire-Control"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.license      = "MIT"
   s.summary      = "An iOS library for the easy stubbing of HTTP responses using simple XML files."
   s.author       = { "Paul Evans" => "evansp2@gmail.com" }
