@@ -2,7 +2,16 @@
 
 [![Build Status](https://travis-ci.org/evanspa/PEWire-Control.svg)](https://travis-ci.org/evanspa/PEWire-Control)
 
-An iOS static library for the easy stubbing of HTTP responses using simple XML configuration files.  PEWire-Control is built on top of the excellent [OHHTTPStubs iOS library](https://github.com/AliSoftware/OHHTTPStubs).
+An iOS static library for the easy stubbing of HTTP responses using simple XML
+configuration files.  PEWire-Control is built on top of the excellent
+[OHHTTPStubs iOS library](https://github.com/AliSoftware/OHHTTPStubs).
+
+**Table of Contents**
+
+- [Typical Usage Example](#typical-usage-example)
+    - [1) Create the XML file representing a possible response from the web service](#1-create-the-xml-file-representing-a-possible-response-from-the-web-service)
+    - [2) In your unit test setup code, do the following:](#2-in-your-unit-test-setup-code-do-the-following)
+- [Installation with CocoaPods](#installation-with-cocoapods)
 
 ### Typical Usage Example
 
