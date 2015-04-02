@@ -6,12 +6,16 @@ An iOS static library for the easy stubbing of HTTP responses using simple XML
 configuration files.  PEWire-Control is built on top of the excellent
 [OHHTTPStubs iOS library](https://github.com/AliSoftware/OHHTTPStubs).
 
+PEWire-Control is part of the
+[PE* iOS Library Suite](#pe-ios-library-suite).
+
 **Table of Contents**
 
 - [Typical Usage Example](#typical-usage-example)
     - [1) Create the XML file representing a possible response from the web service](#1-create-the-xml-file-representing-a-possible-response-from-the-web-service)
     - [2) In your unit test setup code, do the following:](#2-in-your-unit-test-setup-code-do-the-following)
 - [Installation with CocoaPods](#installation-with-cocoapods)
+- [PE* iOS Library Suite](#pe-ios-library-suite)
 
 ### Typical Usage Example
 
@@ -83,3 +87,20 @@ NSStringEncoding encoding;
 ```ruby
 pod 'PEWire-Control', '~> 1.0.1'
 ```
+
+## PE* iOS Library Suite
+*(Each library is implemented as a CocoaPod-enabled iOS static library.)*
++ **[PEObjc-Commons](https://github.com/evanspa/PEObjc-Commons)**: a library
+  providing a set of everyday helper functionality.
++ **[PEXML-Utils](https://github.com/evanspa/PEXML-Utils)**: a library
+  simplifying working with XML.  Built on top of [KissXML](https://github.com/robbiehanson/KissXML).
++ **[PEHateoas-Client](https://github.com/evanspa/PEHateoas-Client)**: a library
+  for consuming hypermedia REST APIs.  I.e. those that adhere to the *Hypermedia
+  As The Engine Of Application State ([HATEOAS](http://en.wikipedia.org/wiki/HATEOAS))* constraint.  Built on top of [AFNetworking](https://github.com/AFNetworking/AFNetworking).
++ **PEWire-Control**: this library.
++ **[PEAppTransaction-Logger](https://github.com/evanspa/PEAppTransaction-Logger)**: a
+  library client for the PEAppTransaction Logging Framework.  Clojure-based libraries exist implementing the server-side [core data access](https://github.com/evanspa/pe-apptxn-core) and [REST API functionality](https://github.com/evanspa/pe-apptxn-restsupport).
++ **[PESimu-Select](https://github.com/evanspa/PESimu-Select)**: a library
+  aiding in the functional testing of web service enabled iOS applications.
++ **[PEDev-Console](https://github.com/evanspa/PEDev-Console)**: a library
+  aiding in the functional testing of iOS applications.
