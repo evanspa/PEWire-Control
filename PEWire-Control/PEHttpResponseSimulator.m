@@ -78,25 +78,37 @@
 #pragma mark - Simulating an HTTP response
 
 + (void)simulateResponseFromXml:(NSString *)xml
+          pathsRelativeToBundle:(NSBundle *)bundle
                  requestLatency:(NSUInteger)reqLatency
                 responseLatency:(NSUInteger)respLatency {
-  [PEHttpResponseSimulator
-    simulateResponseFromMock:[PEHttpResponseUtils mockResponseFromXml:xml]
-              requestLatency:reqLatency
-             responseLatency:respLatency];
+  [PEHttpResponseSimulator simulateResponseFromMock:[PEHttpResponseUtils mockResponseFromXml:xml
+                                                                       pathsRelativeToBundle:bundle]
+                                     requestLatency:reqLatency
+                                    responseLatency:respLatency];
 }
 
 + (void)simulateResponseFromMock:(PEHttpResponse *)mockResp
                   requestLatency:(NSUInteger)reqLatency
                  responseLatency:(NSUInteger)respLatency {
-  [PEHttpResponseSimulator simulateResponseWithUTF8Body:[mockResp body]
-                                             statusCode:[mockResp statusCode]
-                                                headers:[mockResp headers]
-                                                cookies:[mockResp cookies]
-                                          forRequestUrl:[mockResp requestUrl]
-                                   andRequestHttpMethod:[mockResp requestMethod]
-                                         requestLatency:reqLatency
-                                        responseLatency:respLatency];
+  if ([mockResp bodyAsData]) {
+    [PEHttpResponseSimulator simulateResponseWithBody:[mockResp bodyAsData]
+                                           statusCode:[mockResp statusCode]
+                                              headers:[mockResp headers]
+                                              cookies:[mockResp cookies]
+                                        forRequestUrl:[mockResp requestUrl]
+                                 andRequestHttpMethod:[mockResp requestMethod]
+                                       requestLatency:reqLatency
+                                      responseLatency:respLatency];
+  } else {
+    [PEHttpResponseSimulator simulateResponseWithUTF8Body:[mockResp bodyAsString]
+                                               statusCode:[mockResp statusCode]
+                                                  headers:[mockResp headers]
+                                                  cookies:[mockResp cookies]
+                                            forRequestUrl:[mockResp requestUrl]
+                                     andRequestHttpMethod:[mockResp requestMethod]
+                                           requestLatency:reqLatency
+                                          responseLatency:respLatency];
+  }
 }
 
 + (void)simulateResponseWithUTF8Body:(NSString *)body
@@ -107,24 +119,41 @@
                 andRequestHttpMethod:(NSString *)httpMethod
                       requestLatency:(NSUInteger)reqLatency
                      responseLatency:(NSUInteger)respLatency {
+  [self simulateResponseWithBody:[body dataUsingEncoding:NSUTF8StringEncoding]
+                      statusCode:statusCode
+                         headers:headers
+                         cookies:cookies
+                   forRequestUrl:requestUrl
+            andRequestHttpMethod:httpMethod
+                  requestLatency:reqLatency
+                 responseLatency:respLatency];
+}
+
++ (void)simulateResponseWithBody:(NSData *)body
+                      statusCode:(NSUInteger)statusCode
+                         headers:(NSDictionary *)headers
+                         cookies:(NSArray *)cookies
+                   forRequestUrl:(NSURL *)requestUrl
+            andRequestHttpMethod:(NSString *)httpMethod
+                  requestLatency:(NSUInteger)reqLatency
+                 responseLatency:(NSUInteger)respLatency {
   [OHHTTPStubs stubRequestsPassingTest:^(NSURLRequest *request) {
-      return [PEHttpResponseSimulator shouldMockRequest:request
-                                             forUrlPath:[requestUrl path]
-                                              andMethod:httpMethod];
-    } withStubResponse:^(NSURLRequest *request) {
-      NSMutableDictionary *allHeaders =
-        [NSMutableDictionary dictionaryWithCapacity:([headers count] + 1)];
-      [allHeaders addEntriesFromDictionary:headers];
-      NSString *cookieHdr =
-        [PEHttpResponseSimulator cookiesToRfc2109Format:cookies];
-      [allHeaders setObject:cookieHdr forKey:@"Set-Cookie"];
-      return [[OHHTTPStubsResponse
-                responseWithData:[body dataUsingEncoding:NSUTF8StringEncoding]
-                      statusCode:(int)statusCode
-                         headers:allHeaders]
-                     requestTime:reqLatency
-                    responseTime:respLatency];
-    }];
+    return [PEHttpResponseSimulator shouldMockRequest:request
+                                           forUrlPath:[requestUrl path]
+                                            andMethod:httpMethod];
+  } withStubResponse:^(NSURLRequest *request) {
+    NSMutableDictionary *allHeaders =
+    [NSMutableDictionary dictionaryWithCapacity:([headers count] + 1)];
+    [allHeaders addEntriesFromDictionary:headers];
+    NSString *cookieHdr =
+    [PEHttpResponseSimulator cookiesToRfc2109Format:cookies];
+    [allHeaders setObject:cookieHdr forKey:@"Set-Cookie"];
+    return [[OHHTTPStubsResponse responseWithData:body
+                                       statusCode:(int)statusCode
+                                          headers:allHeaders]
+               requestTime:reqLatency
+              responseTime:respLatency];
+  }];
 }
 
 #pragma mark - Ending a simulation

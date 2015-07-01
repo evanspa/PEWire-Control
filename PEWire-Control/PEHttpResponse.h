@@ -89,9 +89,14 @@
 @property (nonatomic) NSInteger statusCode;
 
 /**
- The entity body of the response.
+ The entity body of the response as a string.
  */
-@property (nonatomic) NSString *body;
+@property (nonatomic) NSString *bodyAsString;
+
+/**
+ The entity body of the response as raw data.
+ */
+@property (nonatomic) NSData *bodyAsData;
 
 /**
  The headers of the response.

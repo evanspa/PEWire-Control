@@ -15,8 +15,9 @@
 		1869DD2B1A7B4F59000FFA81 /* PEHttpResponseSimulatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1869DD281A7B4F59000FFA81 /* PEHttpResponseSimulatorTests.m */; };
 		1869DD2C1A7B4F59000FFA81 /* PEHttpResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1869DD291A7B4F59000FFA81 /* PEHttpResponseTests.m */; };
 		1869DD2D1A7B4F59000FFA81 /* PEHttpResponseUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1869DD2A1A7B4F59000FFA81 /* PEHttpResponseUtilsTests.m */; };
-		1869DD301A7B500C000FFA81 /* http-response.200.xml in Resources */ = {isa = PBXBuildFile; fileRef = 1869DD2F1A7B500C000FFA81 /* http-response.200.xml */; };
 		53D1BBD0FD5BB71C04E17628 /* libPods-PEWire-ControlTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20462823015456BF47F50ACC /* libPods-PEWire-ControlTests.a */; };
+		CAA0A3C91B444F4D00D39C7D /* image-files-for-mock-responses in Resources */ = {isa = PBXBuildFile; fileRef = CAA0A3C81B444F4D00D39C7D /* image-files-for-mock-responses */; };
+		CAA0A3CB1B444F9F00D39C7D /* mock-http-responses in Resources */ = {isa = PBXBuildFile; fileRef = CAA0A3CA1B444F9F00D39C7D /* mock-http-responses */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,10 +55,11 @@
 		1869DD281A7B4F59000FFA81 /* PEHttpResponseSimulatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEHttpResponseSimulatorTests.m; sourceTree = "<group>"; };
 		1869DD291A7B4F59000FFA81 /* PEHttpResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEHttpResponseTests.m; sourceTree = "<group>"; };
 		1869DD2A1A7B4F59000FFA81 /* PEHttpResponseUtilsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEHttpResponseUtilsTests.m; sourceTree = "<group>"; };
-		1869DD2F1A7B500C000FFA81 /* http-response.200.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "http-response.200.xml"; sourceTree = "<group>"; };
 		20462823015456BF47F50ACC /* libPods-PEWire-ControlTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PEWire-ControlTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		531931C7A9519E15143E96FA /* Pods-PEWire-ControlTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PEWire-ControlTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PEWire-ControlTests/Pods-PEWire-ControlTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8C762128D9CF56BE0B81202F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAA0A3C81B444F4D00D39C7D /* image-files-for-mock-responses */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "image-files-for-mock-responses"; sourceTree = "<group>"; };
+		CAA0A3CA1B444F9F00D39C7D /* mock-http-responses */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "mock-http-responses"; sourceTree = "<group>"; };
 		CD2CE892E9C3845F0EE4E931 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D352E2E1B0D534BD738B5674 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F43BAC2F3E6E3794B7E55844 /* Pods-PEWire-ControlTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PEWire-ControlTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PEWire-ControlTests/Pods-PEWire-ControlTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -127,7 +129,8 @@
 		1869DD121A7B4B78000FFA81 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1869DD2E1A7B5000000FFA81 /* HTTP Responses */,
+				CAA0A3CA1B444F9F00D39C7D /* mock-http-responses */,
+				CAA0A3C81B444F4D00D39C7D /* image-files-for-mock-responses */,
 				1869DD131A7B4B78000FFA81 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -159,14 +162,6 @@
 				1869DD231A7B4F3D000FFA81 /* PEHttpResponseUtils.m */,
 			);
 			name = "Response Utils";
-			sourceTree = "<group>";
-		};
-		1869DD2E1A7B5000000FFA81 /* HTTP Responses */ = {
-			isa = PBXGroup;
-			children = (
-				1869DD2F1A7B500C000FFA81 /* http-response.200.xml */,
-			);
-			name = "HTTP Responses";
 			sourceTree = "<group>";
 		};
 		1BA2155DC3F70DFD2B2F4CD0 /* Pods */ = {
@@ -271,7 +266,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1869DD301A7B500C000FFA81 /* http-response.200.xml in Resources */,
+				CAA0A3C91B444F4D00D39C7D /* image-files-for-mock-responses in Resources */,
+				CAA0A3CB1B444F9F00D39C7D /* mock-http-responses in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -42,8 +42,10 @@
  Helper function that creates and returns a mock HTTP response instance from
  the given XML representation of an HTTP response.
  @param xmlResponse XML representation of an HTTP response
+ @param bundle The bundle to which file paths (that may appear in the response xml) are relative to.
  @return populated mock HTTP response instance
  */
-+ (PEHttpResponse *)mockResponseFromXml:(NSString *)xmlResponse;
++ (PEHttpResponse *)mockResponseFromXml:(NSString *)xmlResponse
+                  pathsRelativeToBundle:(NSBundle *)bundle;
 
 @end

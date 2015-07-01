@@ -52,6 +52,7 @@
  @param respLatency simulated latency (in seconds) for the response to return
 */
 + (void)simulateResponseFromXml:(NSString *)xml
+          pathsRelativeToBundle:(NSBundle *)bundle
                  requestLatency:(NSUInteger)reqLatency
                 responseLatency:(NSUInteger)respLatency;
 
@@ -72,7 +73,7 @@
  Simulates an HTTP response from the given parameters for the given request
  URL and HTTP method.  The simulation will only be in effect for requests
  whose URL and HTTP method match the given parameters.
- @param body the http response body
+ @param body the http response body as a string
  @param statusCode the http response status code
  @param headers the http response headers
  @param cookies the http response cookies
@@ -92,6 +93,31 @@
                 andRequestHttpMethod:(NSString *)httpMethod
                       requestLatency:(NSUInteger)reqLatency
                      responseLatency:(NSUInteger)respLatency;
+
+/**
+ Simulates an HTTP response from the given parameters for the given request
+ URL and HTTP method.  The simulation will only be in effect for requests
+ whose URL and HTTP method match the given parameters.
+ @param body the http response body
+ @param statusCode the http response status code
+ @param headers the http response headers
+ @param cookies the http response cookies
+ @param requestUrl the http request URL for which the simulation should be
+ active
+ @param httpMethod the http request method for which the simulation should be
+ active
+ @param reqLatency simulated latency (in seconds) for the request to reach its
+ endpoint
+ @param respLatency simulated latency (in seconds) for the response to return
+ */
++ (void)simulateResponseWithBody:(NSData *)body
+                      statusCode:(NSUInteger)statusCode
+                         headers:(NSDictionary *)headers
+                         cookies:(NSArray *)cookies
+                   forRequestUrl:(NSURL *)requestUrl
+            andRequestHttpMethod:(NSString *)httpMethod
+                  requestLatency:(NSUInteger)reqLatency
+                 responseLatency:(NSUInteger)respLatency;
 
 #pragma mark - Ending a simulation
 

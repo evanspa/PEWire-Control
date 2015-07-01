@@ -1,51 +1,48 @@
 PODS:
-  - AFNetworking (2.5.1):
-    - AFNetworking/NSURLConnection (= 2.5.1)
-    - AFNetworking/NSURLSession (= 2.5.1)
-    - AFNetworking/Reachability (= 2.5.1)
-    - AFNetworking/Security (= 2.5.1)
-    - AFNetworking/Serialization (= 2.5.1)
-    - AFNetworking/UIKit (= 2.5.1)
-  - AFNetworking/NSURLConnection (2.5.1):
+  - AFNetworking (2.5.4):
+    - AFNetworking/NSURLConnection (= 2.5.4)
+    - AFNetworking/NSURLSession (= 2.5.4)
+    - AFNetworking/Reachability (= 2.5.4)
+    - AFNetworking/Security (= 2.5.4)
+    - AFNetworking/Serialization (= 2.5.4)
+    - AFNetworking/UIKit (= 2.5.4)
+  - AFNetworking/NSURLConnection (2.5.4):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.5.1):
+  - AFNetworking/NSURLSession (2.5.4):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.5.1)
-  - AFNetworking/Security (2.5.1)
-  - AFNetworking/Serialization (2.5.1)
-  - AFNetworking/UIKit (2.5.1):
+  - AFNetworking/Reachability (2.5.4)
+  - AFNetworking/Security (2.5.4)
+  - AFNetworking/Serialization (2.5.4)
+  - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - AWPagedArray (0.3.0)
   - KissXML (5.0)
   - Kiwi (2.3.1)
   - OHHTTPStubs (3.1.10):
     - OHHTTPStubs/Core (= 3.1.10)
   - OHHTTPStubs/Core (3.1.10)
-  - PEObjc-Commons (1.0.1):
-    - AWPagedArray (~> 0.3.0)
+  - PEObjc-Commons (1.0.8)
   - PEXML-Utils (1.0.1):
     - KissXML (~> 5.0)
     - PEObjc-Commons (~> 1.0.1)
 
 DEPENDENCIES:
-  - AFNetworking (~> 2.5.1)
+  - AFNetworking (~> 2.5.4)
   - Kiwi (~> 2.3.1)
   - OHHTTPStubs (~> 3.1.10)
-  - PEObjc-Commons (~> 1.0.1)
+  - PEObjc-Commons (~> 1.0.8)
   - PEXML-Utils (~> 1.0.1)
 
 SPEC CHECKSUMS:
-  AFNetworking: 8bee59492a6ff15d69130efa4d0dc67e0094a52a
-  AWPagedArray: c66f6186321cd37bff0a26e714f157f5d27009e9
-  KissXML: e537c38b18ede903ee6de45953a9bd86c131ebe9
-  Kiwi: 73e1400209055ee9c8ba78c6012b6b642d0fb9f7
-  OHHTTPStubs: 2038e929b6abb94881000524c1cb4aba0a1bb4a2
-  PEObjc-Commons: 2bab8aa6545df045571785d818362cdfa0094a63
-  PEXML-Utils: 9f2f9c83da7116f3a398dbfa1544d8ef4342dc69
+  AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  KissXML: ce643413d618ad69886d0d43c3792b7dedfe476e
+  Kiwi: f038a6c61f7a9e4d7766bff5717aa3b3fdb75f55
+  OHHTTPStubs: 00152a63400246fcbc4b772a2a547ea34c97cbd6
+  PEObjc-Commons: c40bea2ce7f44ed636a74b7c78cd7a2753120d4e
+  PEXML-Utils: f7e0759b8e4e2ec3a39c781b362d7fb233fc8421
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.37.2

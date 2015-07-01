@@ -57,7 +57,8 @@
   return date;
 }
 
-+ (PEHttpResponse *)mockResponseFromXml:(NSString *)xmlResponse {
++ (PEHttpResponse *)mockResponseFromXml:(NSString *)xmlResponse
+                  pathsRelativeToBundle:(NSBundle *)bundle {
   NSDateFormatter *rfc1123 = [[NSDateFormatter alloc] init];
   rfc1123.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
   rfc1123.timeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
@@ -107,7 +108,16 @@
                                     dateFromString:strAttrExtractor(@"expires")]
                            maxAge:[strAttrExtractor(@"max-age") intValue]];
     }];
-  [mockResp setBody:[xmlUtils valueForXPath:@"/http-response/body"]];
+  NSString *fileDataPath = [xmlUtils valueForXPath:@"/http-response/body-file/@path"];
+  if (fileDataPath) {
+    NSString *bundlePath = [bundle bundlePath];
+    NSString *fullPath = [bundlePath stringByAppendingPathComponent:fileDataPath];
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSData *bodyAsData = [fm contentsAtPath:fullPath];
+    [mockResp setBodyAsData:bodyAsData];
+  } else {
+    [mockResp setBodyAsString:[xmlUtils valueForXPath:@"/http-response/body"]];
+  }
   return mockResp;
 }
 

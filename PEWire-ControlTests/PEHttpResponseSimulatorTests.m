@@ -209,7 +209,7 @@ convenience method", ^{
                    [NSURL URLWithString:@"http://test.example.com/base"]];
              [mockResponse setStatusCode:200];
              [mockResponse setRequestMethod:@"GET"];
-             [mockResponse setBody:@"mock response body"];
+             [mockResponse setBodyAsString:@"mock response body"];
              [mockResponse addHeaderWithName:@"Content-Type"
                                        value:@"text/plain"];
              [mockResponse addCookieWithName:@"C1"
@@ -256,6 +256,7 @@ convenience method", ^{
 <body><![CDATA[mock response body]]></body>\
 </http-response>";
              [PEHttpResponseSimulator simulateResponseFromXml:xmlMockResp
+                                        pathsRelativeToBundle:[NSBundle bundleForClass:[self class]]
                                                requestLatency:0
                                               responseLatency:0];
              vanillaInputsAndInvocationExpectationsBlk();
