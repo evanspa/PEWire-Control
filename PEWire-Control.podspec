@@ -12,8 +12,8 @@ Pod::Spec.new do |s|
   s.exclude_files = "**/*Tests/*.*"
   s.requires_arc = true
   s.dependency 'PEObjc-Commons', '~> 1.0.8'
+  s.dependency 'KissXML', '~> 5.0'
   s.dependency 'PEXML-Utils', '~> 1.0.1'
   s.dependency 'OHHTTPStubs', '~> 3.1.10'
   s.xcconfig     = { 'HEADER_SEARCH_PATHS' => '"$(SDKROOT)/usr/include/libxml2"' }
-  s.libraries    = 'xml2'
 end
