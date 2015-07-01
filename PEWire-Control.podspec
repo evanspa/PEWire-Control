@@ -15,4 +15,5 @@ Pod::Spec.new do |s|
   s.dependency 'PEXML-Utils', '~> 1.0.1'
   s.dependency 'OHHTTPStubs', '~> 3.1.10'
   s.xcconfig     = { 'HEADER_SEARCH_PATHS' => '"$(SDKROOT)/usr/include/libxml2"' }
+  s.libraries    = 'xml2'
 end
