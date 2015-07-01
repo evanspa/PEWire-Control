@@ -5,6 +5,7 @@ platform :ios, '8.3'
 pod 'PEObjc-Commons', '~> 1.0.8'
 pod 'PEXML-Utils', '~> 1.0.1'
 pod 'OHHTTPStubs', '~> 3.1.10'
+pod 'KissXML', '~> 5.0', :inhibit_warnings => true
 
 target :'PEWire-ControlTests',:exclusive => true do
   pod 'AFNetworking', '~> 2.5.4'
