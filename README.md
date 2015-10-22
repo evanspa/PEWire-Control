@@ -85,7 +85,7 @@ NSStringEncoding encoding;
 ### Installation with CocoaPods
 
 ```ruby
-pod 'PEWire-Control', '~> 1.0.1'
+pod 'PEWire-Control', '~> 1.0.3'
 ```
 
 ## PE* iOS Library Suite

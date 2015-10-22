@@ -1,13 +1,11 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, '8.3'
+platform :ios, '8.4'
 
-pod 'PEObjc-Commons', '~> 1.0.8'
-pod 'PEXML-Utils', '~> 1.0.1'
-pod 'OHHTTPStubs', '~> 3.1.10'
+pod 'PEObjc-Commons', '~> 1.0.73', :inhibit_warnings => true
+pod 'PEXML-Utils', '~> 1.0.3', :inhibit_warnings => true
+pod 'OHHTTPStubs', '~> 3.1.10', :inhibit_warnings => true
 pod 'KissXML', '~> 5.0', :inhibit_warnings => true
-
-target :'PEWire-ControlTests',:exclusive => true do
-  pod 'AFNetworking', '~> 2.5.4'
-  pod 'Kiwi', '~> 2.3.1'
-end
+pod 'AFNetworking', '~> 2.5.4', :inhibit_warnings => true
+pod 'Kiwi', '~> 2.3.1', :inhibit_warnings => true
+pod 'BlocksKit', '~> 2.2.5', :inhibit_warnings => true

@@ -15,7 +15,6 @@
 		1869DD2B1A7B4F59000FFA81 /* PEHttpResponseSimulatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1869DD281A7B4F59000FFA81 /* PEHttpResponseSimulatorTests.m */; };
 		1869DD2C1A7B4F59000FFA81 /* PEHttpResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1869DD291A7B4F59000FFA81 /* PEHttpResponseTests.m */; };
 		1869DD2D1A7B4F59000FFA81 /* PEHttpResponseUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1869DD2A1A7B4F59000FFA81 /* PEHttpResponseUtilsTests.m */; };
-		53D1BBD0FD5BB71C04E17628 /* libPods-PEWire-ControlTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20462823015456BF47F50ACC /* libPods-PEWire-ControlTests.a */; };
 		CAA0A3C91B444F4D00D39C7D /* image-files-for-mock-responses in Resources */ = {isa = PBXBuildFile; fileRef = CAA0A3C81B444F4D00D39C7D /* image-files-for-mock-responses */; };
 		CAA0A3CB1B444F9F00D39C7D /* mock-http-responses in Resources */ = {isa = PBXBuildFile; fileRef = CAA0A3CA1B444F9F00D39C7D /* mock-http-responses */; };
 /* End PBXBuildFile section */
@@ -79,7 +78,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1869DD0E1A7B4B78000FFA81 /* libPEWire-Control.a in Frameworks */,
-				53D1BBD0FD5BB71C04E17628 /* libPods-PEWire-ControlTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,11 +208,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1869DD191A7B4B78000FFA81 /* Build configuration list for PBXNativeTarget "PEWire-ControlTests" */;
 			buildPhases = (
-				D99200B66BD89D60AC6563E9 /* Check Pods Manifest.lock */,
 				1869DD091A7B4B78000FFA81 /* Sources */,
 				1869DD0A1A7B4B78000FFA81 /* Frameworks */,
 				1869DD0B1A7B4B78000FFA81 /* Resources */,
-				7C9EC54212A94F6C82B59BDE /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -232,7 +228,7 @@
 		1869DCFA1A7B4B78000FFA81 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Paul Evans";
 				TargetAttributes = {
 					1869DD011A7B4B78000FFA81 = {
@@ -304,36 +300,6 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		7C9EC54212A94F6C82B59BDE /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PEWire-ControlTests/Pods-PEWire-ControlTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D99200B66BD89D60AC6563E9 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -370,6 +336,7 @@
 /* Begin XCBuildConfiguration section */
 		1869DD141A7B4B78000FFA81 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D352E2E1B0D534BD738B5674 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -387,6 +354,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -401,7 +369,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -410,6 +378,7 @@
 		};
 		1869DD151A7B4B78000FFA81 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD2CE892E9C3845F0EE4E931 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -435,7 +404,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -464,64 +433,30 @@
 		};
 		1869DD1A1A7B4B78000FFA81 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 531931C7A9519E15143E96FA /* Pods-PEWire-ControlTests.debug.xcconfig */;
+			baseConfigurationReference = D352E2E1B0D534BD738B5674 /* Pods.debug.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "PEWire-ControlTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-l\"Pods-PEWire-ControlTests-AFNetworking\"",
-					"-l\"Pods-PEWire-ControlTests-Kiwi\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"MobileCoreServices\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"XCTest\"",
-					"-l\"xml2\"",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "name.paulevans.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		1869DD1B1A7B4B78000FFA81 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F43BAC2F3E6E3794B7E55844 /* Pods-PEWire-ControlTests.release.xcconfig */;
+			baseConfigurationReference = CD2CE892E9C3845F0EE4E931 /* Pods.release.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "PEWire-ControlTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-l\"Pods-PEWire-ControlTests-AFNetworking\"",
-					"-l\"Pods-PEWire-ControlTests-Kiwi\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"MobileCoreServices\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"XCTest\"",
-					"-l\"xml2\"",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "name.paulevans.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
