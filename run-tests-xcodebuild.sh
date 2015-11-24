@@ -1,10 +1,9 @@
 #!/bin/bash
 
 readonly PROJECT_NAME="PEWire-Control"
-readonly SDK_VERSION="9.0"
+readonly SDK_VERSION="9.1"
 readonly ARCH="i386"
 export LC_CTYPE=en_US.UTF-8
-
 
 xcodebuild \
 -workspace ${PROJECT_NAME}.xcworkspace \

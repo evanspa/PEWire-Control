@@ -40,11 +40,11 @@ PODS:
   - OHHTTPStubs (3.1.12):
     - OHHTTPStubs/Core (= 3.1.12)
   - OHHTTPStubs/Core (3.1.12)
-  - PEObjc-Commons (1.0.73):
+  - PEObjc-Commons (1.0.86):
     - BlocksKit (~> 2.2.5)
-  - PEXML-Utils (1.0.3):
+  - PEXML-Utils (1.0.4):
     - KissXML (~> 5.0)
-    - PEObjc-Commons (~> 1.0.73)
+    - PEObjc-Commons (~> 1.0.86)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5.4)
@@ -52,8 +52,8 @@ DEPENDENCIES:
   - KissXML (~> 5.0)
   - Kiwi (~> 2.3.1)
   - OHHTTPStubs (~> 3.1.10)
-  - PEObjc-Commons (~> 1.0.73)
-  - PEXML-Utils (~> 1.0.3)
+  - PEObjc-Commons (~> 1.0.86)
+  - PEXML-Utils (~> 1.0.4)
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
@@ -61,7 +61,7 @@ SPEC CHECKSUMS:
   KissXML: ce643413d618ad69886d0d43c3792b7dedfe476e
   Kiwi: f038a6c61f7a9e4d7766bff5717aa3b3fdb75f55
   OHHTTPStubs: 8cf0cfe6f34f13fc88fdf5b2a1b2c2536e8c0261
-  PEObjc-Commons: e87d8679737960cac9a9ca1c03dd036c5d048b18
-  PEXML-Utils: 47a95ccdbf02bc2a1d69b6d8e99017df9da49f88
+  PEObjc-Commons: 590bf3988d90666d307a618384ebc72181dc3bb2
+  PEXML-Utils: d36d0ab7337b92c120ec49b84f99e7b923bf8a24
 
 COCOAPODS: 0.39.0

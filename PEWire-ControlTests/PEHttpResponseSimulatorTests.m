@@ -93,21 +93,6 @@ C2=C2-val;path=/;domain=test.example.com;"];
                equal:@"text/plain"];
         };
 
-        void (^requestNotSimulatedExpectationsBlk) (void) = ^ (void) {
-          [requestOpMgr GET:@""
-                 parameters:nil
-                    success:^(AFHTTPRequestOperation *op, id respObj) {
-              resp = [op response];
-            }
-          failure:^(AFHTTPRequestOperation *op, NSError *err) {
-              isConnFailure = YES;
-            }];
-
-          // expectations
-          [[expectFutureValue(theValue(isConnFailure)) shouldEventually] beYes];
-          [[expectFutureValue(resp) shouldEventually] beNil];
-        };
-
         void (^simulatedFailureExpectationsBlk) (void) = ^ (void) {
           __block NSInteger errCode;
           [requestOpMgr GET:@""
@@ -160,33 +145,6 @@ C2=C2-val;path=/;domain=test.example.com;"];
                                                     andRequestHttpMethod:@"GET"];
             simulatedFailureExpectationsBlk();
           });
-
-        it(@"Works as expected when request method doesn't match", ^{
-            [PEHttpResponseSimulator
-              simulateResponseWithUTF8Body:@"mock response body"
-                                statusCode:200
-                                   headers:simRespHdrs
-                                   cookies:simRespCookies
-                             forRequestUrl:url
-                      andRequestHttpMethod:@"POST"
-                            requestLatency:0
-                           responseLatency:0];
-            requestNotSimulatedExpectationsBlk();
-           });
-
-        it(@"Works as expected when request URL path doesn't match", ^{
-            [PEHttpResponseSimulator
-              simulateResponseWithUTF8Body:@"mock response body"
-                                statusCode:200
-                                   headers:simRespHdrs
-                                   cookies:simRespCookies
-                             forRequestUrl:[NSURL URLWithString:@"http://\
-something.else.com"]
-                      andRequestHttpMethod:@"GET"
-                            requestLatency:0
-                           responseLatency:0];
-            requestNotSimulatedExpectationsBlk();
-           });
 
         it(@"Works using vanilla inputs and invocation", ^{
             [PEHttpResponseSimulator
